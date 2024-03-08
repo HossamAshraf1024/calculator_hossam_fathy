@@ -1,45 +1,28 @@
-
-class operation:
+class Operation:
     def __init__(self, x, y):
         self.x = x
         self.y = y
 
-    def areInputsValid(self):
-            try:
-                # Try converting input to float
-                self.x = float(self.x)
-                self.y = float(self.y)
-                return True
-            except ValueError:
-                return False
-
-    # to be overridden
+    # Method to be overridden by subclasses
     def do_operation(self):
         pass
 
-
-"""
-if operation.areInputsValid()
-    operation.do_operation()
-else 
-    retry
-"""
-class addition(operation):
+class Addition(Operation):
     def do_operation(self):
+        # Perform addition
         return self.x + self.y
 
-
-class subtraction(operation):
+class Subtraction(Operation):
     def do_operation(self):
+        # Perform subtraction
         return self.x - self.y
 
-
-class multiplication(operation):
+class Multiplication(Operation):
     def do_operation(self):
+        # Perform multiplication
         return self.x * self.y
 
-
-class division(operation):
+class Division(Operation):
     def do_operation(self):
+        # Perform division
         return self.x / self.y
-

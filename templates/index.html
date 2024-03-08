@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,14 +8,26 @@
 <body>
     <h1>Calculator</h1>
     <form action="/calculate" method="post">
+        <!-- Input field for the first number -->
         <input type="text" name="num1" placeholder="Enter first number">
+        <!-- Display warning message for num1 if it exists -->
+        {% if warning_num1 %}
+            <div style="color: red;">{{ warning_num1 }}</div>
+        {% endif %}
+        <!-- Input field for the second number -->
         <input type="text" name="num2" placeholder="Enter second number">
+        <!-- Display warning message for num2 if it exists -->
+        {% if warning_num2 %}
+            <div style="color: red;">{{ warning_num2 }}</div>
+        {% endif %}
+        <!-- Dropdown menu to select the arithmetic operation -->
         <select name="operation">
             <option value="add">Add</option>
             <option value="subtract">Subtract</option>
             <option value="multiply">Multiply</option>
             <option value="divide">Divide</option>
         </select>
+        <!-- Submit button to calculate -->
         <button type="submit">Calculate</button>
     </form>
 </body>
