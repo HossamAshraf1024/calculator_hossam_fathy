@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculation History</title>
+</head>
+<body>
+    <h1>Calculation History</h1>
+    <table border="1">
+        <tr>
+            <th>Number 1</th>
+            <th>Number 2</th>
+            <th>Operation</th>
+            <th>Result</th>
+        </tr>
+        <!-- Loop through the history and display each calculation -->
+        {% for calculation in history %}
+        <tr>
+            <td>{{ calculation.num1 }}</td>
+            <td>{{ calculation.num2 }}</td>
+            <td>{{ calculation.operation }}</td>
+            <td>{{ calculation.result }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <!-- Link back to the calculator -->
+    <a href="/">Back to Calculator</a>
+</body>
+</html>
